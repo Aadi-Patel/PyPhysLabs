@@ -11,7 +11,7 @@ x_units = 's'
 x_label = 'Time'
 y_units = 'm'
 y_label = 'Signal'
-title = 'Curve Fit Test for HMO'
+title = 'Curve Fit Test for DMO'
 PDF_output_Name = 'DHO_Fit.pdf'
 
 # Fitting function
