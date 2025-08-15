@@ -12,6 +12,7 @@ x_label = 'Time'
 y_units = 'm'
 y_label = 'Signal'
 title = 'Curve Fit Test for HMO'
+PDF_output_Name = 'DHO_Fit.pdf'
 
 # Fitting function
 def test_func(t, A, b, w, phi, Xeq):
@@ -62,7 +63,7 @@ print("Reduced Chi-Squared: ", chitwo/N_datapoints)
 # Plotting
 fig = plt.figure(figsize=(8, 6)) # Set figure size
 ax = fig.add_subplot(211) # Top subplot (2 rows, 1 column, first plot)
-ay = fig.add_subplot(313) # Bottom subplot (2 rows, 1 column, third plot)
+ay = fig.add_subplot(313) # Bottom subplot (3 rows, 1 column, third plot)
 fig.subplots_adjust(top = 0.85) # Adjust top margin
 
 # Top subplot: Data and fit
@@ -90,5 +91,7 @@ ay.grid(True)
 ay.axhline(y=0, color='r', linestyle='--', alpha=0.5)  # Add a reference line at y=0
 
 # Saving plots
-plt.savefig('dho_fit.pdf')
+current_dir = os.path.dirname(os.path.abspath(__file__))
+output_path = os.path.join(current_dir, PDF_output_Name)
+plt.savefig(output_path)
 #plt.show()
